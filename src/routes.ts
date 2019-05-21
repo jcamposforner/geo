@@ -1,10 +1,13 @@
-import {UserController} from "./controller/UserController";
+import { UserController } from "./controller/UserController";
+import { requestMiddleware } from "./middleware/requestMiddleware";
+import { requestMiddlewar } from "./middleware/requestMiddlewar";
 
 export const Routes = [{
     method: "get",
     route: "/users",
     controller: UserController,
-    action: "all"
+    action: "all",
+    middleware: [requestMiddleware, requestMiddlewar]
 }, {
     method: "get",
     route: "/users/:id",
@@ -14,10 +17,12 @@ export const Routes = [{
     method: "post",
     route: "/users",
     controller: UserController,
-    action: "save"
+    action: "save",
+    middleware: [requestMiddleware]
 }, {
     method: "delete",
     route: "/users/:id",
     controller: UserController,
-    action: "remove"
+    action: "remove",
+    middleware: [requestMiddleware]
 }];

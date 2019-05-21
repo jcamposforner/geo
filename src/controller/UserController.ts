@@ -7,9 +7,7 @@ export class UserController {
     private userRepository = getRepository(User);
 
     async all(request: Request, response: Response, next: NextFunction) {
-        const users = await this.userRepository.find();
-
-        return response.status(200).send(users);
+        return await this.userRepository.find();
     }
 
     async one(request: Request, response: Response, next: NextFunction) {

@@ -5,7 +5,6 @@ import * as bodyParser from "body-parser";
 import {Request, Response} from "express";
 import {Routes} from "./routes";
 import {User} from "./entity/User";
-import { requestMiddleware } from "./middleware/requestMiddleware";
 
 createConnection().then(async connection => {
 
